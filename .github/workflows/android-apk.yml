@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahindra Service - ACI Motors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h2>ACI Motors</h2>
+    <button onclick="toggleMenu()">⋮</button>
+  </header>
+
+  <div id="menu" class="menu">
+    <p id="userName">User Name</p>
+    <p id="userMobile">Mobile Number</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <section id="loginPage" class="login">
+    <h1>Mahindra Service</h1>
+    <input id="name" placeholder="Your Name">
+    <input id="mobile" placeholder="Mobile Number">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Login / Register</button>
+  </section>
+
+  <main id="mainPage" style="display:none">
+    <h2>Mahindra Service Dashboard</h2>
+
+    <div class="grid">
+      <button onclick="showPage('stock')">Stock</button>
+      <button onclick="showPage('free')">Free Service</button>
+      <button onclick="showPage('paid')">Paid Service</button>
+      <button onclick="showPage('history')">History</button>
+    </div>
+
+    <section id="stock" class="page">
+      <h3>Stock Management</h3>
+      <input id="partName" placeholder="Part Name">
+      <input id="partQty" type="number" placeholder="Quantity">
+      <input id="partPrice" type="number" placeholder="Price">
+      <button onclick="addStock()">Add Stock</button>
+      <div id="stockList"></div>
+    </section>
+
+    <section id="free" class="page">
+      <h3>Free Service</h3>
+      <input placeholder="Driver Name">
+      <input placeholder="Mobile Number">
+      <input placeholder="Code">
+      <input type="date">
+      <input placeholder="Service Number">
+      <input placeholder="Chassis Number">
+      <input placeholder="KM">
+      <button onclick="alert('Add parts feature next step')">Add Used Parts</button>
+      <button onclick="saveRecord('Free Service')">Save Free Service</button>
+    </section>
+
+    <section id="paid" class="page">
+      <h3>Paid Service</h3>
+      <input placeholder="Customer Name">
+      <input placeholder="Mobile Number">
+      <input type="date">
+      <button onclick="alert('Add parts feature next step')">Add Used Parts</button>
+      <button onclick="saveRecord('Paid Service')">Save Paid Service</button>
+    </section>
+
+    <section id="history" class="page">
+      <h3>Service History</h3>
+      <div id="historyList"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
